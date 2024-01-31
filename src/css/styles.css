@@ -209,6 +209,14 @@ main {
   }
 }
 
+@media (max-width: 470px) {
+  .container .profile-data .repositories ul li p {
+    padding: 2px;
+    margin: 10px;
+    display: block;
+  }
+}
+
 @media (max-width: 425px) {
   main {
     padding: 15% 0;    
@@ -225,5 +233,3 @@ main {
     padding: 0;
   }
 }
-
-/* #7f00b2 */

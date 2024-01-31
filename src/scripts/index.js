@@ -32,7 +32,6 @@ async function getUserData(userName) {
     }
 
     const repositoriesResponse = await getRepositories(userName)
-    console.log(repositoriesResponse)
     const eventResponse = await getEvents(userName)
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)

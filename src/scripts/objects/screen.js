@@ -13,28 +13,28 @@ const screen = {
                                             </div>
                                         </div>
                                      </div>`
-        
+
         let repositoriesItens = ''
         user.repositories.forEach(repo => repositoriesItens += `<li><a class="repo-link" href="${repo.html_url}" target="_blank">${repo.name}<br><br>
         <p class="repo-info">🍴${repo.forks}</p> 
         <p class="repo-info">⭐${repo.stargazers_count}</p>
         <p class="repo-info">👀${repo.watchers}</p>
-        <p class="repo-info">👨‍💻${repo.language}</p></a><li>`)
+        <p class="repo-info">👨‍💻${repo.language}</p> </a><li>`)
 
-            if(user.repositories.length > 0){
-                this.userProfile.innerHTML += `
+        if (user.repositories.length > 0) {
+            this.userProfile.innerHTML += `
                                                 <div class="repositories section">
                                                     <h2>Repositórios</h2>
                                                     <ul>${repositoriesItens}</ul>
                                                 </div>`
-            }
+        }
 
         let eventItens = ''
-        if(user.events.length > 0){
+        if (user.events.length > 0) {
             user.events.forEach(event => {
                 let eventMessage = ''
-                
-                if(event.type === 'PushEvent'){
+
+                if (event.type === 'PushEvent') {
                     eventMessage = event.payload.commits.map(commit => commit.message)
                 }
                 eventItens += `<li><strong>${event.repo.name}</strong> - ${eventMessage}</li>`
@@ -54,7 +54,7 @@ const screen = {
         }
     },
 
-    renderNotFound(){
+    renderNotFound() {
         this.userProfile.innerHTML = '<h3>Usuário não encontrado</h3>'
     }
 }
